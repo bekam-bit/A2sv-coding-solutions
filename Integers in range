@@ -1,0 +1,13 @@
+class Solution:
+    def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
+        seen = set(range(left, right + 1))
+
+        for st, e in ranges:
+            for x in range(st, e + 1):
+                if x in seen:
+                    seen.remove(x)
+
+            if not seen:
+                return True
+
+        return not seen
