@@ -1,0 +1,9 @@
+def swap_case(s):
+    arr=list(s)
+    for i in range(len(arr)):
+        if arr[i].isupper():
+            arr[i]=arr[i].lower()
+        elif arr[i].islower():
+            arr[i]=arr[i].upper()
+    return ''.join(arr)
+
