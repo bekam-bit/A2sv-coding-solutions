@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def powmodm():
+    base=int(input())
+    exp=int(input())
+    m=int(input())
+    print(pow(base,exp))
+    print(pow(base,exp,m))
+    
+if __name__=='__main__':
+    powmodm()
