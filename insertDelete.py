@@ -1,21 +1,18 @@
 class RandomizedSet:
 
     def __init__(self):
-        self.seen=set()
-        self.rand_list=[]
-
+       self.rand_list=[]
+    
     def insert(self, val: int) -> bool:
-        if val not in self.seen:
+        if val not in self.rand_list:
             self.rand_list.append(val)
-            self.seen.add(val)
             return True
         else:
             return False
 
     def remove(self, val: int) -> bool:
-        if val in self.seen:
+        if val in self.rand_list:
             self.rand_list.remove(val)
-            self.seen.remove(val)
             return True
         else:
             return False
