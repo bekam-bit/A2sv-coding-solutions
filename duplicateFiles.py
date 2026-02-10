@@ -1,6 +1,3 @@
-from collections import defaultdict
-from typing import List
-
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
         content_dict = defaultdict(list)
