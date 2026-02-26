@@ -7,7 +7,7 @@ class Solution:
             return True
 
         while left <= right:
-            if left * left + right * right == c or left * left + left * left == c or right * right + right * right == c :
+            if left * left + right * right == c:
                 return True
             elif left * left + right * right > c:
                 right -= 1
