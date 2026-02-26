@@ -20,7 +20,7 @@ class Solution:
                 max_freq = 0
                 for ch , cnt in s_cnt.items():
                     max_freq = max(max_freq, cnt)
-            print(cur_len)
+            
             max_len = max(max_len, cur_len)
 
         return max_len
