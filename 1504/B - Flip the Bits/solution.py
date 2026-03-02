@@ -1,0 +1,35 @@
+def flipTheBits():
+    tc = int(input())
+
+    for _ in range(tc):
+        n =  int(input())
+
+        a = list(map(int, input()))
+        b = list(map(int, input()))
+
+        flip = False
+        zer0_cnt = a.count(0)
+        ones_cnt = a.count(1)
+        possible = True
+
+        for i in range(n - 1, -1, -1):
+            cur_a = a[i]
+
+            if flip:
+                cur_a = 1 if cur_a == 0 else 0
+            
+            if cur_a != b[i]:
+                if zer0_cnt != ones_cnt:
+                    possible = False
+                    break
+
+                flip = not flip
+            
+            if a[i] == 0:
+                zer0_cnt -= 1
+            else:
+                ones_cnt -= 1
+
+        print("YES" if possible else "NO")    
+
+flipTheBits()
