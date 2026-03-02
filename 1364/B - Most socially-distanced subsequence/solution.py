@@ -1,0 +1,25 @@
+tc = int(input())
+
+for _ in range(tc):
+    n = int(input())
+    perm = list(map(int, input().split()))
+
+    if n <= 2:
+        print(n)
+        print(*perm)
+        continue
+
+    result = [perm[0]]
+
+    for i in range(1, n - 1):
+        
+        is_increasing_middle = perm[i-1] < perm[i] < perm[i+1]
+        is_decreasing_middle = perm[i-1] > perm[i] > perm[i+1]
+
+        if not (is_increasing_middle or is_decreasing_middle):
+            result.append(perm[i])
+
+    result.append(perm[-1])
+
+    print(len(result))
+    print(*(result))
