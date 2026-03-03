@@ -1,0 +1,30 @@
+from collections import Counter
+
+n, k = map(int, input().split())
+
+nums = list(map(int, input().split()))
+
+left = 0
+cur_len = 0
+max_len = 0
+cnt = Counter()
+
+idx = []
+for right in range(n):
+    cnt[nums[right]] += 1
+
+    while left < n and len(cnt) > k:
+        cnt[nums[left]] -= 1
+
+        if cnt[nums[left]] == 0:
+            del cnt[nums[left]]
+        
+        left += 1
+    
+    cur_len = right - left + 1
+    
+    if cur_len > max_len:
+        max_len = cur_len
+        idx = [left + 1, right + 1]
+
+print(*idx)
