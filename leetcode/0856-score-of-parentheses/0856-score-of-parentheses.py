@@ -5,7 +5,7 @@ class Solution:
 
         old_score = 1
         new_score = 1
-        
+
         for i in range(len(s)):
             if s[i] == "(":
                 stack.append(s[i])
@@ -18,8 +18,7 @@ class Solution:
                         prev = stack.pop()
                         stack.append(stack.pop() + prev)
 
-                    else:
-                        if isinstance(stack[-1], int):
+                    if isinstance(stack[-1], int):
                             old_score = stack.pop()
                             new_score = old_score * 2
                         
