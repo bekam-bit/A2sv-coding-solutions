@@ -4,9 +4,8 @@ class Solution:
 
         stack = []
         temp_stack = []
+        
         for i in range(len(s)):
-           
-
             if s[i] != "]":
                 stack.append(s[i])
 
@@ -14,7 +13,6 @@ class Solution:
                 temp_stack = []
                 while stack and stack[-1] != "[":
                     temp_stack.append(stack.pop())
-                
                 
                 stack.pop()
 
