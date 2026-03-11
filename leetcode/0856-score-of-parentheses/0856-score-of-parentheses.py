@@ -27,4 +27,4 @@ class Solution:
                    
                 stack.append(new_score)
                 
-        return sum(x for x in stack if isinstance(x, int))
+        return sum(stack)
